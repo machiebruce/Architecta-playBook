@@ -3,15 +3,18 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "astro dev",
+    "dev": "tinacms dev -c \"astro dev\"",
     "build": "astro build",
+    "build:tina": "tinacms build && astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
     "@astrojs/mdx": "^4.3.13",
     "@tailwindcss/vite": "^4.2.1",
+    "@tinacms/cli": "^2.1.9",
     "astro": "^5.17.1",
-    "tailwindcss": "^4.2.1"
+    "tailwindcss": "^4.2.1",
+    "tinacms": "^3.6.1"
   }
 }
