@@ -10,208 +10,111 @@ import '../../styles/global.css';
     <title>Empowerment — Organizing Playbook</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
   </head>
-  <body class="min-h-screen bg-white text-[#313131] font-['Inter',sans-serif]">
+  <body class="min-h-screen bg-white text-[#313131]" style="font-family: 'Source Sans 3', sans-serif;">
 
-    <!-- ========== HEADER ========== -->
-    <header class="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
-      <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        <a href="/" class="text-2xl font-black tracking-tight text-[#FF6900]">
-          Organizing Playbook
-        </a>
-        <nav class="hidden md:flex items-center gap-1">
-          {[
-            'Outreach', 'Research', 'Support', 'Advocacy',
-            'Engagement', 'Operations', 'Collaboration', 'Empowerment', 'Opportunities'
-          ].map((item) => (
-            <a
-              href={`/category/${item.toLowerCase()}`}
-              class:list={[
-                'px-3 py-2 rounded-md text-sm font-medium transition-colors',
-                item === 'Empowerment'
-                  ? 'bg-[#FF6900] text-white'
-                  : 'text-gray-600 hover:text-[#FF6900] hover:bg-orange-50'
-              ]}
-            >
-              {item}
-            </a>
-          ))}
-        </nav>
-        <!-- Mobile menu button -->
-        <button class="md:hidden p-2 rounded-md text-gray-600 hover:bg-gray-100" aria-label="Menu">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
+    <!-- ========== HERO — dark bg, giant type, concentric circles ========== -->
+    <section class="relative bg-[#1a1a1a] overflow-hidden min-h-[70vh] flex items-center justify-center text-center">
+      <!-- Concentric circles decoration -->
+      <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+        <div class="w-[500px] h-[500px] rounded-full border border-white/10"></div>
       </div>
-    </header>
+      <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+        <div class="w-[380px] h-[380px] rounded-full border border-white/10"></div>
+      </div>
+      <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+        <div class="w-[260px] h-[260px] rounded-full border border-white/15"></div>
+      </div>
+      <!-- Small target dot -->
+      <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+        <div class="w-3 h-3 rounded-full bg-white/20"></div>
+      </div>
+      <!-- Radiating lines -->
+      <div class="absolute top-[15%] left-1/2 -translate-x-1/2 w-px h-16 bg-white/10"></div>
+      <div class="absolute bottom-[15%] left-1/2 -translate-x-1/2 w-px h-16 bg-white/10"></div>
 
-    <!-- ========== HERO ========== -->
-    <section class="relative overflow-hidden bg-gradient-to-br from-[#FF6900] via-[#FF8534] to-[#FFa060]">
-      <!-- Decorative SVG pattern -->
-      <div class="absolute inset-0 opacity-10">
-        <svg class="w-full h-full" viewBox="0 0 800 400" preserveAspectRatio="none">
-          <circle cx="150" cy="200" r="180" fill="white" />
-          <circle cx="650" cy="100" r="120" fill="white" />
-          <circle cx="500" cy="350" r="90" fill="white" />
-          <rect x="300" y="50" width="200" height="200" rx="20" fill="white" opacity="0.5" />
-        </svg>
-      </div>
-      <div class="relative max-w-7xl mx-auto px-6 py-20 md:py-28">
-        <p class="text-white/80 text-sm font-semibold uppercase tracking-widest mb-4">Category</p>
-        <h1 class="text-5xl md:text-7xl font-black text-white mb-6">Empowerment</h1>
-        <p class="text-xl md:text-2xl text-white/90 max-w-2xl leading-relaxed">
-          Not just placing those living with the disease at the center, but putting them in the driver's seat.
-        </p>
+      <div class="relative z-10 px-6 py-20">
+        <p class="text-white/50 text-sm uppercase tracking-[0.3em] mb-6" style="font-family: 'Oswald', sans-serif;">The Playbook on</p>
+        <h1 class="text-[4rem] sm:text-[6rem] md:text-[8rem] lg:text-[10rem] font-bold uppercase leading-[0.85] text-white tracking-tight" style="font-family: 'Oswald', sans-serif;">
+          Empowerment
+        </h1>
       </div>
     </section>
 
-    <!-- ========== BREADCRUMB ========== -->
-    <div class="max-w-7xl mx-auto px-6 py-4">
-      <nav class="flex items-center gap-2 text-sm text-gray-400">
-        <a href="/" class="hover:text-[#FF6900] transition-colors">Home</a>
-        <span>/</span>
-        <span class="text-gray-600">Empowerment</span>
-      </nav>
-    </div>
+    <!-- ========== SUBTITLE + NAV SECTION ========== -->
+    <section class="border-b-4 border-[#FF6900]">
+      <div class="max-w-7xl mx-auto px-6 py-12 md:py-16 flex flex-col md:flex-row md:items-center md:justify-between gap-8">
+        <p class="text-2xl md:text-3xl font-bold leading-snug max-w-lg" style="font-family: 'Oswald', sans-serif;">
+          Not only placing those living with the disease and caregivers at the center of the organization, but putting them in the driver seat.
+        </p>
+        <nav class="flex flex-col gap-2 shrink-0">
+          {['What we did', "Don't do this", 'Best practices', 'Your turn'].map((label) => (
+            <a href={`#${label.toLowerCase().replace(/['\s]+/g, '-')}`} class="px-5 py-2 border border-[#313131] text-sm font-semibold uppercase tracking-wider hover:bg-[#313131] hover:text-white transition-colors text-right">
+              {label}
+            </a>
+          ))}
+        </nav>
+      </div>
+      <!-- Orange bar with logo -->
+      <div class="bg-[#FF6900] px-6 py-3">
+        <div class="max-w-7xl mx-auto">
+          <span class="text-white text-xs font-bold uppercase tracking-[0.2em]" style="font-family: 'Oswald', sans-serif;">Organizing Playbook</span>
+        </div>
+      </div>
+    </section>
 
     <!-- ========== WHAT WE DID ========== -->
-    <section class="relative max-w-7xl mx-auto px-6 py-16">
-      <div class="grid md:grid-cols-2 gap-12 items-center">
-        <div>
-          <h2 class="text-3xl md:text-4xl font-bold mb-6 text-[#313131]">What We Did</h2>
-          <p class="text-lg text-gray-600 leading-relaxed mb-4">
-            We brought the voice of the community into every conversation. Every decision was informed by the lived experience of those we serve — not just as stakeholders, but as leaders shaping the path forward.
-          </p>
-          <p class="text-lg text-gray-600 leading-relaxed">
-            From early strategy sessions to final implementation, community members co-designed solutions alongside organizational staff, ensuring authenticity and relevance at every step.
-          </p>
-        </div>
-        <div class="relative">
-          <div class="bg-orange-50 rounded-3xl p-8 md:p-12">
-            <div class="absolute -top-4 -right-4 w-24 h-24 bg-[#FF6900]/10 rounded-full"></div>
-            <div class="absolute -bottom-6 -left-6 w-32 h-32 bg-[#9b51e0]/10 rounded-full"></div>
-            <blockquote class="relative text-xl md:text-2xl font-semibold text-[#313131] italic leading-relaxed">
-              "Nothing about us without us."
-            </blockquote>
+    <section id="what-we-did" class="bg-white">
+      <div class="max-w-7xl mx-auto px-6 py-16 md:py-24">
+        <h2 class="text-4xl md:text-6xl font-bold uppercase mb-12 border-l-4 border-[#FF6900] pl-6" style="font-family: 'Oswald', sans-serif;">
+          What We Did
+        </h2>
+        <div class="grid md:grid-cols-2 gap-12 text-lg leading-relaxed text-gray-700">
+          <div>
+            <p class="mb-4">
+              I AM ALS is an organization built with and for those living with ALS and caregivers. This approach to rare disease community building and advocacy places voices, needs and input of those impacted by ALS at the forefront of all actions and decisions.
+            </p>
+            <p>
+              This patient-driven model succeeds because it gives those who are most invested in the effort for treatments and cures a platform to say what they need and how they want it communicated.
+            </p>
+          </div>
+          <div>
+            <p class="mb-4">
+              This approach also sets us up to be nimble and to redirect to emerging issues faced by the ALS community. Most importantly, it allows the organization to feel the same day-by-day, hour-by-hour urgency that those living with ALS and their loved ones feel.
+            </p>
+            <p>
+              This ground-up approach to community building ensures that everyone who wants to be involved has a seat at the table, and that the effort is built in collaboration with those living with ALS, rather on their behalf.
+            </p>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- ========== SEPARATOR LINE ========== -->
+    <div class="max-w-7xl mx-auto px-6">
+      <hr class="border-gray-200" />
+    </div>
+
     <!-- ========== DON'T DO THIS ========== -->
-    <section class="relative bg-gray-50">
-      <!-- Decorative background -->
-      <div class="absolute top-0 right-0 w-64 h-64 opacity-5">
-        <svg viewBox="0 0 200 200">
-          <polygon points="100,10 190,190 10,190" fill="#FF6900" />
-        </svg>
-      </div>
-      <div class="max-w-7xl mx-auto px-6 py-16">
-        <div class="flex items-center gap-3 mb-8">
-          <span class="flex items-center justify-center w-10 h-10 rounded-full bg-red-100 text-red-600">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </span>
-          <h2 class="text-3xl md:text-4xl font-bold text-[#313131]">Don't Do This</h2>
-        </div>
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+    <section id="don't-do-this" class="bg-[#1a1a1a] text-white">
+      <div class="max-w-7xl mx-auto px-6 py-16 md:py-24">
+        <h2 class="text-4xl md:text-6xl font-bold uppercase mb-16 border-l-4 border-[#FF6900] pl-6" style="font-family: 'Oswald', sans-serif;">
+          Don't Do This
+        </h2>
+        <div class="grid md:grid-cols-2 gap-x-16 gap-y-12">
           {[
-            { num: '01', text: 'Don\'t tokenize community voices — include them as genuine partners, not checkbox participants.' },
-            { num: '02', text: 'Don\'t assume you know what the community needs without asking them directly and repeatedly.' },
-            { num: '03', text: 'Don\'t create programs for the community without community co-design from the very start.' },
-            { num: '04', text: 'Don\'t limit empowerment to storytelling — expand it to strategy, governance, and decision-making.' },
-            { num: '05', text: 'Don\'t forget to compensate community members fairly for their time, expertise, and emotional labor.' },
-          ].map(({ num, text }) => (
-            <div class="bg-white rounded-xl p-6 border border-gray-200 hover:border-red-200 hover:shadow-md transition-all">
-              <span class="text-sm font-bold text-red-400 mb-3 block">{num}</span>
-              <p class="text-gray-700 leading-relaxed">{text}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    <!-- ========== BEST PRACTICES ========== -->
-    <section class="relative">
-      <div class="absolute bottom-0 left-0 w-96 h-96 opacity-5">
-        <svg viewBox="0 0 200 200">
-          <circle cx="100" cy="100" r="90" fill="#9b51e0" />
-        </svg>
-      </div>
-      <div class="max-w-7xl mx-auto px-6 py-16">
-        <div class="flex items-center gap-3 mb-8">
-          <span class="flex items-center justify-center w-10 h-10 rounded-full bg-green-100 text-green-600">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-            </svg>
-          </span>
-          <h2 class="text-3xl md:text-4xl font-bold text-[#313131]">Best Practices</h2>
-        </div>
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {[
-            { num: '01', text: 'Create formal advisory roles for community members with clear responsibilities and compensation.' },
-            { num: '02', text: 'Provide training and resources so community leaders can participate meaningfully in organizational decisions.' },
-            { num: '03', text: 'Build feedback loops that show the community how their input shaped outcomes and next steps.' },
-            { num: '04', text: 'Invest in long-term leadership development, not just one-off engagement opportunities.' },
-            { num: '05', text: 'Measure empowerment outcomes with metrics co-developed by the community itself.' },
-          ].map(({ num, text }) => (
-            <div class="bg-white rounded-xl p-6 border border-gray-200 hover:border-green-200 hover:shadow-md transition-all">
-              <span class="text-sm font-bold text-green-500 mb-3 block">{num}</span>
-              <p class="text-gray-700 leading-relaxed">{text}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    <!-- ========== YOUR TURN — WORKSHEETS ========== -->
-    <section class="bg-[#faf7f5] border-t border-gray-100">
-      <div class="max-w-7xl mx-auto px-6 py-16">
-        <h2 class="text-3xl md:text-4xl font-bold text-[#313131] mb-3">Your Turn</h2>
-        <p class="text-lg text-gray-500 mb-10 max-w-xl">Download worksheets to put these principles into action with your team.</p>
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {[
-            {
-              title: 'Empowerment Self-Assessment',
-              desc: 'Evaluate how well your organization centers community voice in decision-making.',
-              color: 'border-t-[#FF6900]',
-            },
-            {
-              title: 'Co-Design Workshop Guide',
-              desc: 'A step-by-step facilitation guide for running inclusive co-design sessions.',
-              color: 'border-t-[#9b51e0]',
-            },
-            {
-              title: 'Community Leadership Plan',
-              desc: 'Map out pathways for community members to take on formal leadership roles.',
-              color: 'border-t-[#FF6900]',
-            },
-          ].map(({ title, desc, color }) => (
-            <div class={`bg-white rounded-xl border border-gray-200 ${color} border-t-4 p-6 hover:shadow-lg transition-shadow group`}>
-              <h3 class="text-lg font-bold text-[#313131] mb-2 group-hover:text-[#FF6900] transition-colors">{title}</h3>
-              <p class="text-gray-500 text-sm leading-relaxed mb-6">{desc}</p>
-              <div class="flex items-center justify-between">
-                <a href="#" class="inline-flex items-center gap-2 text-sm font-semibold text-[#FF6900] hover:text-[#e55d00] transition-colors">
-                  Get the worksheet
-                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </a>
-                <div class="flex gap-2">
-                  <button class="p-2 rounded-md text-gray-400 hover:text-[#9b51e0] hover:bg-purple-50 transition-colors" title="Save">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
-                    </svg>
-                  </button>
-                  <button class="p-2 rounded-md text-gray-400 hover:text-[#FF6900] hover:bg-orange-50 transition-colors" title="Share">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
-                    </svg>
-                  </button>
-                </div>
+            { num: '1', title: 'Be slow to share critical information', text: 'Scientific or political news in the rare disease space can take many months or years to appear. When it becomes available, share it quickly. Be a source for important information on your disease.' },
+            { num: '2', title: 'Limit opportunities to have the voices of people living with the disease heard', text: 'Those living with the disease should be offered ample opportunities to share their stories through internal channels and external events and communications. Their voices should be the largest megaphones your organization has.' },
+            { num: '3', title: 'Hide the realities of your disease', text: 'One of your primary communications objectives should be to celebrate, support and amplify the voices and experiences of those living with the disease — honestly and candidly.' },
+            { num: '4', title: 'Discourage out-of-the-box thinking', text: 'Let your team, those living with the disease, and volunteers know that their ideas and initiatives will be fully explored and supported, even if they\'re unconventional or unorthodox.' },
+            { num: '5', title: 'Create artificial barriers to participation in your organization\'s work', text: 'If someone offers assistance, don\'t turn it away before fully considering it just because it didn\'t come through a formal channel. Embrace all offers of support.' },
+          ].map(({ num, title, text }) => (
+            <div class="flex gap-6">
+              <span class="text-5xl md:text-6xl font-bold text-white/20 leading-none shrink-0" style="font-family: 'Oswald', sans-serif;">{num}</span>
+              <div>
+                <h3 class="text-lg font-bold mb-3">{title}</h3>
+                <p class="text-gray-400 leading-relaxed">{text}</p>
               </div>
             </div>
           ))}
@@ -219,76 +122,69 @@ import '../../styles/global.css';
       </div>
     </section>
 
-    <!-- ========== UNLOCK WORKSHEETS FORM ========== -->
-    <section class="bg-gradient-to-br from-[#313131] to-[#1a1a2e] text-white">
-      <div class="max-w-7xl mx-auto px-6 py-16">
-        <div class="max-w-2xl mx-auto text-center">
-          <h2 class="text-3xl md:text-4xl font-bold mb-4">Unlock All Worksheets</h2>
-          <p class="text-gray-300 mb-10">Get free access to all our resources, tools, and worksheets.</p>
-          <form class="grid sm:grid-cols-2 gap-4 text-left">
-            <div>
-              <label class="block text-sm text-gray-400 mb-1">First Name</label>
-              <input type="text" class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-500 focus:outline-none focus:border-[#FF6900] transition-colors" placeholder="Jane" />
+    <!-- ========== BEST PRACTICES ========== -->
+    <section id="best-practices" class="bg-white">
+      <div class="max-w-7xl mx-auto px-6 py-16 md:py-24">
+        <h2 class="text-4xl md:text-6xl font-bold uppercase mb-16 border-l-4 border-[#FF6900] pl-6" style="font-family: 'Oswald', sans-serif;">
+          Best Practices
+        </h2>
+        <div class="grid md:grid-cols-2 gap-x-16 gap-y-12">
+          {[
+            { num: '1', title: 'Involve representatives of those living with the disease throughout the organization', text: 'In addition to teams, have those living with the disease participate on the board and in all important decision-making bodies. Never see those living with the disease as a "token" or "symbolic" gesture.' },
+            { num: '2', title: 'Embrace connections with organizations for related diseases', text: 'Uniting with similar disease organizations can help when advocating for shared objectives, such as research funding, regulatory issues or unmet care needs.' },
+            { num: '3', title: 'Encourage those living with the disease to share their personal stories early and often', text: 'Sharing stories from those living with the disease is one of the most vital parts of patient-centric organizing. They are the true experts — help them reach others with their experiences and passion by connecting them with media, building social profiles and recording videos.' },
+            { num: '4', title: 'Across all media platforms, keep a relentless emphasis on the positive', text: 'Leading with personal and positive messages can help reshape the narrative around the disease from helplessness to hopefulness.' },
+            { num: '5', title: 'Allow those living with the disease to make their own decisions and reach their own conclusions', text: 'Every person\'s experience with a disease is different. There\'s no set playbook. While the resources you provide can help, they\'re not the only way to do things — listen, learn and adapt.' },
+          ].map(({ num, title, text }) => (
+            <div class="flex gap-6">
+              <span class="text-5xl md:text-6xl font-bold text-gray-200 leading-none shrink-0" style="font-family: 'Oswald', sans-serif;">{num}</span>
+              <div>
+                <h3 class="text-lg font-bold mb-3">{title}</h3>
+                <p class="text-gray-600 leading-relaxed">{text}</p>
+              </div>
             </div>
-            <div>
-              <label class="block text-sm text-gray-400 mb-1">Last Name</label>
-              <input type="text" class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-500 focus:outline-none focus:border-[#FF6900] transition-colors" placeholder="Doe" />
-            </div>
-            <div class="sm:col-span-2">
-              <label class="block text-sm text-gray-400 mb-1">Email</label>
-              <input type="email" class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-500 focus:outline-none focus:border-[#FF6900] transition-colors" placeholder="jane@example.com" />
-            </div>
-            <div>
-              <label class="block text-sm text-gray-400 mb-1">Postal Code</label>
-              <input type="text" class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-500 focus:outline-none focus:border-[#FF6900] transition-colors" placeholder="10001" />
-            </div>
-            <div>
-              <label class="block text-sm text-gray-400 mb-1">Country</label>
-              <select class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white focus:outline-none focus:border-[#FF6900] transition-colors">
-                <option value="" class="text-gray-900">Select country</option>
-                <option value="us" class="text-gray-900">United States</option>
-                <option value="uk" class="text-gray-900">United Kingdom</option>
-                <option value="it" class="text-gray-900">Italy</option>
-              </select>
-            </div>
-            <div class="sm:col-span-2">
-              <label class="block text-sm text-gray-400 mb-1">Organization</label>
-              <input type="text" class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-500 focus:outline-none focus:border-[#FF6900] transition-colors" placeholder="Your organization" />
-            </div>
-            <div class="sm:col-span-2 mt-2">
-              <button type="submit" class="w-full py-4 rounded-lg bg-[#FF6900] hover:bg-[#e55d00] text-white font-bold text-lg transition-colors cursor-pointer">
-                Get Access
-              </button>
-            </div>
-          </form>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== YOUR TURN ========== -->
+    <section id="your-turn" class="bg-[#FF6900] text-white">
+      <div class="max-w-7xl mx-auto px-6 py-16 md:py-24 grid md:grid-cols-2 gap-12 items-center">
+        <h2 class="text-5xl md:text-7xl font-bold uppercase leading-[0.9]" style="font-family: 'Oswald', sans-serif;">
+          Your Turn
+        </h2>
+        <div>
+          <p class="text-lg leading-relaxed mb-8 text-white/90">
+            Below are worksheets to get you started in shaping your organizing approach. They can be downloaded or saved in your queue by clicking the flag in the top left corner of each worksheet tile and emailed to yourself in the top right corner of your screen to begin work immediately as you shape your future movement. To access worksheets across all categories of this Playbook click "see all worksheets." Nervous? Don't be. You got this.
+          </p>
+          <a href="#" class="inline-block px-8 py-4 border-2 border-white text-white font-bold uppercase tracking-wider text-sm hover:bg-white hover:text-[#FF6900] transition-colors" style="font-family: 'Oswald', sans-serif;">
+            Unlock the Worksheets
+          </a>
         </div>
       </div>
     </section>
 
     <!-- ========== FOOTER ========== -->
     <footer class="bg-[#1a1a1a] text-gray-400">
-      <div class="max-w-7xl mx-auto px-6 py-10">
-        <div class="flex flex-col md:flex-row items-center justify-between gap-6">
-          <div class="flex items-center gap-4">
-            <span class="text-lg font-bold text-[#FF6900]">Organizing Playbook</span>
-            <span class="text-sm">Created by our team of revolutionaries.</span>
-          </div>
-          <div class="flex items-center gap-4">
-            <!-- Social icons -->
-            <a href="#" class="p-2 rounded-full hover:bg-white/10 transition-colors" aria-label="Facebook">
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      <div class="max-w-7xl mx-auto px-6 py-10 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="flex items-center gap-6">
+          <span class="text-sm font-bold uppercase tracking-[0.15em] text-white" style="font-family: 'Oswald', sans-serif;">Share the Playbook</span>
+          <div class="flex items-center gap-3">
+            <a href="#" class="w-9 h-9 rounded-full border border-gray-600 flex items-center justify-center hover:border-white hover:text-white transition-colors" aria-label="Facebook">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
             </a>
-            <a href="#" class="p-2 rounded-full hover:bg-white/10 transition-colors" aria-label="Twitter">
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+            <a href="#" class="w-9 h-9 rounded-full border border-gray-600 flex items-center justify-center hover:border-white hover:text-white transition-colors" aria-label="Twitter">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
             </a>
-            <a href="#" class="p-2 rounded-full hover:bg-white/10 transition-colors" aria-label="Instagram">
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678a6.162 6.162 0 100 12.324 6.162 6.162 0 100-12.324zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405a1.441 1.441 0 11-2.882 0 1.441 1.441 0 012.882 0z"/></svg>
+            <a href="#" class="w-9 h-9 rounded-full border border-gray-600 flex items-center justify-center hover:border-white hover:text-white transition-colors" aria-label="Instagram">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678a6.162 6.162 0 100 12.324 6.162 6.162 0 100-12.324zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405a1.441 1.441 0 11-2.882 0 1.441 1.441 0 012.882 0z"/></svg>
             </a>
           </div>
         </div>
-        <div class="mt-8 pt-6 border-t border-gray-800 flex flex-col md:flex-row items-center justify-between gap-4 text-sm">
-          <p>&copy; 2025 Organizing Playbook. All rights reserved.</p>
-          <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+        <div class="flex items-center gap-8 text-sm">
+          <a href="#" class="hover:text-white transition-colors uppercase tracking-wider">Privacy Policy</a>
+          <span>Created by our team of revolutionaries. &copy; 2025</span>
         </div>
       </div>
     </footer>
